@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title>quiz</title>
+	</head>
+	<body ng-controller='playersController'>
+		<div class="container">
+			<h1>Players Details</h1>
+			<!-- Tacking input from the user. Here we have to take their valid user id. We are binding the user details to players object.players is an array which is storing player1 and player2 names -->
+			<label><strong>Player 1:</strong></label><input type="text" name="player1" ng-model="players.player1"><br>
+			<label><strong>Player 2:</strong></label><input type="text" name="player2" ng-model="players.player2"><br>
+			<button ng-click="playersSubmit($scope)">send</button>
+		</div>
+		<div class="container2">
+			<!-- when the document ready this container will be in hidden state  -->
+			<h1>Welcom Players {{players.player1}}, {{players.player2}}</h1>
+			<div ng-repeat='quiz in quizes'>
+				<span onClick='displayQuiz("{{quiz.title}}")'>{{quiz.title}}, {{quiz.questions}} </span><br>
+			</div>
+		</div>
+		<div class="container3">
+			<!-- when the document ready this container will be in hidden state  -->
+			<!-- this container will hold questions  -->
+		</div>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/angular.js"></script>
+		<script src="js/quiz.js"></script>
+	</body>
+</html>
